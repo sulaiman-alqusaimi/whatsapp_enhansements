@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-06-02 19:26+0400\n"
+"PO-Revision-Date: 2022-06-02 19:29+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.4.3\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:51
+msgid "read the chat subtitle"
+msgstr "قراءة عنوان الدردشة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:62
+msgid "open chat info"
+msgstr "فتح معلومات الدردشة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:73
+msgid "Attach item"
+msgstr "إرفاق عنصر"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:84
+msgid "go to the unread messages section"
+msgstr "الانتقال إلى أول رسالة غير مقروءة في الدردشة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:106
+msgid "go to the messages list"
+msgstr "الانتقال إلى قائمة الرسائل في الدردشة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:119
+msgid "go to the chats list"
+msgstr "الانتقال إلى قائمة الدردشات"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:136
+msgid "new chat"
+msgstr "دردشة جديدة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:147
+msgid "go to the typing message text field"
+msgstr "الانتقال إلى منطقة الكتابة في الدردشة المفتوحة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:158
+msgid "record voice notes"
+msgstr "تسجيل رسالة صوتية"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:172
+msgid "delete voice notes"
+msgstr "إلغاء تسجيل الرسالة الصوتية"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:191
+msgid "back"
+msgstr "رجوع"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:193
+msgid "cancel recording"
+msgstr "إلغاء التسجيل"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:195
+msgid "archived chats"
+msgstr "الدردشات المؤرشفة"
+
+#~ msgid "attach item"
+#~ msgstr "إرفاق عنصر"
