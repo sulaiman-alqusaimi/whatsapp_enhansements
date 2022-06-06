@@ -187,7 +187,7 @@ class AppModule(appModuleHandler.AppModule):
 		elif obj.UIAAutomationId == "MuteDropdown":
 			obj.name = obj.children[0].name
 		elif obj.UIAAutomationId == "ThemeCombobox":
-			obj.name = obj.previous.name + obj.firstChild.children[1].name
+			obj.name = obj.previous.name +" "+ obj.firstChild.children[1].name
 		elif obj.name == "WhatsApp.Design.ThemeData":
 			obj.name = obj.children[1].name
 		elif obj.UIAAutomationId == "BackButton":
