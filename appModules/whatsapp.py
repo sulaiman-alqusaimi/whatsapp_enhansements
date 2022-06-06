@@ -189,13 +189,15 @@ class AppModule(appModuleHandler.AppModule):
 		elif obj.UIAAutomationId == "ThemeCombobox":
 			obj.name = obj.previous.name
 		elif obj.UIAAutomationId == "BackButton":
-			obj.name = _("back")
+			obj.name = _("Back")
 		elif obj.name == "\ue8bb":
-			obj.name = _("cancel reply")
+			obj.name = _("Cancel reply")
+		elif obj.UIAAutomationId == "RightButton":
+			obj.name = _("Record")
 		elif obj.UIAAutomationId == "PttDeleteButton":
-			obj.name = _("cancel recording")
+			obj.name = _("Cancel recording")
 		elif obj.name == "WhatsApp.ChatListArchiveButtonCellVm":
-			obj.name = _("archived chats")
+			obj.name = _("Archived chats")
 		elif obj.UIAAutomationId == "SendMessages":
 			obj.name = _(obj.previous.name+": "+obj.firstChild.name)
 		elif obj.UIAAutomationId == "EditInfo":
