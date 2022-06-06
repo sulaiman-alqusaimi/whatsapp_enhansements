@@ -201,9 +201,9 @@ class AppModule(appModuleHandler.AppModule):
 		elif obj.name == "WhatsApp.ChatListArchiveButtonCellVm":
 			obj.name = _("Archived chats")
 		elif obj.UIAAutomationId == "SendMessages":
-			obj.name = _(obj.previous.name+": "+obj.firstChild.name)
+			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
 		elif obj.UIAAutomationId == "EditInfo":
-			obj.name = _(obj.previous.name+": "+obj.firstChild.name)
+			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
 
 		nextHandler()
 	def terminate(self):
