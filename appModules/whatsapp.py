@@ -161,9 +161,9 @@ class AppModule(appModuleHandler.AppModule):
 		txt = self.find("TextBox")
 		obj = self.find("RightButton") or self.find("PttSendButton")
 		if obj and (txt is None or len(txt.children) > 0):
-				obj.doAction()
-				if config.conf["whatsapp_enhansements"]["record_sounds"]:
-					winsound.PlaySound(os.path.join(path, "record.wav"), 1) if obj.UIAAutomationId == "RightButton" else winsound.PlaySound(os.path.join(path, "stop.wav"), 1)
+			obj.doAction()
+			if config.conf["whatsapp_enhansements"]["record_sounds"]:
+				winsound.PlaySound(os.path.join(path, "record.wav"), 1) if obj.UIAAutomationId == "RightButton" else winsound.PlaySound(os.path.join(path, "stop.wav"), 1)
 		else:
 			gesture.send()
 
@@ -194,7 +194,7 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = _("Back")
 		elif obj.name == "\ue8bb":
 			obj.name = _("Cancel reply")
-		elif obj.UIAAutomationId == "RightButton":
+		elif obj.UIAAutomationId == "RightButton" and obj.firstChild.name == "\ue720":
 			obj.name = _("Record")
 		elif obj.UIAAutomationId == "PttDeleteButton":
 			obj.name = _("Cancel recording")
