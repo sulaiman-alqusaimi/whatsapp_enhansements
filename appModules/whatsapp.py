@@ -161,7 +161,7 @@ class AppModule(appModuleHandler.AppModule):
 	def script_record(self, gesture):
 		txt = self.find("TextBox")
 		obj = self.find("RightButton") or self.find("PttSendButton")
-		if obj and (txt is None or len(txt.children) > 0):
+		if obj and  (obj.UIAAutomationId == "RightButton" and obj.firstChild.name == "\ue720") or obj.UIAAutomationId == "PttSendButton":
 			obj.doAction()
 			if config.conf["whatsapp_enhansements"]["record_sounds"]:
 				winsound.PlaySound(os.path.join(path, "record.wav"), 1) if obj.UIAAutomationId == "RightButton" else winsound.PlaySound(os.path.join(path, "stop.wav"), 1)
@@ -196,7 +196,7 @@ class AppModule(appModuleHandler.AppModule):
 		elif obj.name == "\ue8bb":
 			obj.name = _("Cancel reply")
 		elif obj.UIAAutomationId == "RightButton" and obj.firstChild.name == "\ue720":
-			obj.name = _("Record")
+			obj.name = _("Record voice note")
 		elif obj.UIAAutomationId == "PttDeleteButton":
 			obj.name = _("Cancel recording")
 		elif obj.name == "WhatsApp.ChatListArchiveButtonCellVm":
