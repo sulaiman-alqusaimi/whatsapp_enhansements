@@ -122,7 +122,15 @@ class AppModule(appModuleHandler.AppModule):
 		obj = self.find("ChatList")
 
 		if obj:
-			chats = obj.children[1]
+			for child in obj.children:
+				if any([i.UIAAutomationId == "ChatsListItem" for i in child.children]):
+					chats = child
+					break
+			else:
+				gesture.send()
+				return
+
+
 			for chat in chats.children:
 				if controlTypes.STATE_SELECTED in chat.states:
 					chat.setFocus()
@@ -205,9 +213,6 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
 		elif obj.UIAAutomationId == "EditInfo":
 			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
-		elif obj.UIAAutomationId in ("NewMessagesNotificationSwitch", "WhenWAClosedSwitch"):
-			obj.name = obj.previous.name
-
 
 		nextHandler()
 	def terminate(self):
