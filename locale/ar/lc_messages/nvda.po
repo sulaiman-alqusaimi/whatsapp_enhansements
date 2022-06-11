@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-06-02 19:26+0400\n"
-"PO-Revision-Date: 2022-06-02 19:29+0400\n"
+"PO-Revision-Date: 2022-06-11 15:08+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -59,16 +59,24 @@ msgid "delete voice notes"
 msgstr "إلغاء تسجيل الرسالة الصوتية"
 
 #: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:191
-msgid "back"
+msgid "Back"
 msgstr "رجوع"
 
 #: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:193
-msgid "cancel recording"
+msgid "Cancel recording"
 msgstr "إلغاء التسجيل"
 
 #: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:195
-msgid "archived chats"
+msgid "Archived chats"
 msgstr "الدردشات المؤرشفة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:199
+msgid "Record voice note"
+msgstr "تسجيل رسالة صوتية"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:197
+msgid "Cancel reply"
+msgstr "إلغاء الرد"
 
 #~ msgid "attach item"
 #~ msgstr "إرفاق عنصر"
