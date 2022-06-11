@@ -205,6 +205,9 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
 		elif obj.UIAAutomationId == "EditInfo":
 			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
+		elif obj.UIAAutomationId in ("NewMessagesNotificationSwitch", "WhenWAClosedSwitch"):
+			obj.name = obj.previous.name
+
 
 		nextHandler()
 	def terminate(self):
