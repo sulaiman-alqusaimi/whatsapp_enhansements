@@ -120,9 +120,10 @@ class AppModule(appModuleHandler.AppModule):
 		category="whatsapp")
 	def script_chatsList(self, gesture):
 		obj = self.find("ChatList")
+
 		if obj:
-			obj = obj.children[0]
-			for chat in obj.children:
+			chats = obj.children[1]
+			for chat in chats.children:
 				if controlTypes.STATE_SELECTED in chat.states:
 					chat.setFocus()
 					break
