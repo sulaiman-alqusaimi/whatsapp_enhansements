@@ -237,12 +237,6 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = _("Back")
 		elif obj.name == "\ue8bb":
 			obj.name = _("Cancel reply")
-		elif obj.UIAAutomationId == "RightButton" and obj.firstChild.name == "\ue720":
-			obj.name = _("Record voice note")
-		elif obj.UIAAutomationId == "PttDeleteButton":
-			obj.name = _("Cancel recording")
-		elif obj.name == "WhatsApp.ChatListArchiveButtonCellVm":
-			obj.name = _("Archived chats")
 		elif obj.UIAAutomationId == "SendMessages":
 			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
 		elif obj.UIAAutomationId == "EditInfo":
