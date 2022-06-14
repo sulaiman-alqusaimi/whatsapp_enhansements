@@ -75,7 +75,7 @@ class AppModule(appModuleHandler.AppModule):
 	def script_options(self, gesture):
 		obj = self.find("SettingsButton")
 		if obj:
-			message(settings.name)
+			message(obj.name)
 			obj.doAction()
 		else:
 			gesture.send()
@@ -87,7 +87,7 @@ class AppModule(appModuleHandler.AppModule):
 	def script_attach(self, gesture):
 		obj = self.find("AttachButton")
 		if obj:
-			message(attach.name)
+			message(obj.name)
 			obj.doAction()
 		else:
 			gesture.send()
