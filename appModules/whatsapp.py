@@ -53,7 +53,7 @@ class AppModule(appModuleHandler.AppModule):
 	def script_subtitles(self, gesture):
 		obj = self.find("TitleButton")
 		if obj:
-			message(", ".join([o.name for o in obj.children]))
+			message(", ".join([o.name for o in obj.children if len(o.name) < 50]))
 		else:
 			gesture.send()
 
@@ -69,12 +69,25 @@ class AppModule(appModuleHandler.AppModule):
 			gesture.send()
 
 	@script(
+		gesture="kb:alt+o", 
+		description=_("go to More options"), 
+		category="whatsapp")
+	def script_options(self, gesture):
+		obj = self.find("SettingsButton")
+		if obj:
+			message(obj.name)
+			obj.doAction()
+		else:
+			gesture.send()
+
+	@script(
 		gesture="kb:control+o", 
 		description=_("Attach item"), 
 		category="whatsapp")
 	def script_attach(self, gesture):
 		obj = self.find("AttachButton")
 		if obj:
+			message(obj.name)
 			obj.doAction()
 		else:
 			gesture.send()
@@ -85,7 +98,7 @@ class AppModule(appModuleHandler.AppModule):
 		category="whatsapp")
 	def script_unread(self, gesture):
 		def search(txt):
-			words = ["غير مقرو", "unread"]
+			words = ["غير مقرو", "unread", "непрочитанное сообщение", "Непрочитано", "непрочитанных сообщений", "Непрочитане"]
 			for word in words:
 				if txt.find(word) != -1:
 					return word
@@ -97,7 +110,7 @@ class AppModule(appModuleHandler.AppModule):
 					msg.next.setFocus()
 					break
 			else:
-				message("لا توجد رسائل جديدة غير مقروءة")
+				message("There's no unread messages")
 		else:
 			gesture.send()
 
@@ -105,7 +118,6 @@ class AppModule(appModuleHandler.AppModule):
 		gesture="kb:alt+m",
 		description=_("go to the messages list"),
 		category="whatsapp")
-
 	def script_messagesList(self, gesture):
 		obj = self.find("ListView")
 		if obj:
@@ -113,14 +125,12 @@ class AppModule(appModuleHandler.AppModule):
 		else:
 			gesture.send()
 
-
 	@script(
 		gesture="kb:alt+c",
 		description=_("go to the chats list"),
 		category="whatsapp")
 	def script_chatsList(self, gesture):
 		obj = self.find("ChatList")
-
 		if obj:
 			for child in obj.children:
 				if any([i.UIAAutomationId == "ChatsListItem" for i in child.children]):
@@ -130,13 +140,38 @@ class AppModule(appModuleHandler.AppModule):
 				gesture.send()
 				return
 
-
 			for chat in chats.children:
 				if controlTypes.STATE_SELECTED in chat.states:
 					chat.setFocus()
 					break
 			else:
 				obj.setFocus()
+		else:
+			gesture.send()
+
+	@script(
+		gesture="kb:alt+shift+c", 
+		description=_("Press audio call button"), 
+		category="whatsapp")
+	def script_audiocall(self, gesture):
+		obj = self.find("AudioCallButton")
+		audioname = self.find("TitleButton")
+		if obj:
+			message("Please wait, you will be connected with"+ " "+audioname.firstChild.name +" "+ "through an audio call.")
+			obj.doAction()
+		else:
+			gesture.send()
+
+	@script(
+		gesture="kb:alt+shift+v", 
+		description=_("Press video call button"), 
+		category="whatsapp")
+	def script_vCall(self, gesture):
+		obj = self.find("VideoCallButton")
+		vName = self.find("TitleButton")
+		if obj:
+			message("Please wait, you will be connected with"+ " "+vName.firstChild.name +" "+ "through a video call.")
+			obj.doAction()
 		else:
 			gesture.send()
 
@@ -167,7 +202,6 @@ class AppModule(appModuleHandler.AppModule):
 		description=_("record voice notes"),
 		category="whatsapp")
 	def script_record(self, gesture):
-		txt = self.find("TextBox")
 		obj = self.find("RightButton") or self.find("PttSendButton")
 		if obj and  (obj.UIAAutomationId == "RightButton" and obj.firstChild.name == "\ue720") or obj.UIAAutomationId == "PttSendButton":
 			obj.doAction()
@@ -203,12 +237,6 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = _("Back")
 		elif obj.name == "\ue8bb":
 			obj.name = _("Cancel reply")
-		elif obj.UIAAutomationId == "RightButton" and obj.firstChild.name == "\ue720":
-			obj.name = _("Record voice note")
-		elif obj.UIAAutomationId == "PttDeleteButton":
-			obj.name = _("Cancel recording")
-		elif obj.name == "WhatsApp.ChatListArchiveButtonCellVm":
-			obj.name = _("Archived chats")
 		elif obj.UIAAutomationId == "SendMessages":
 			obj.name = _(obj.previous.name +": "+ obj.firstChild.name)
 		elif obj.UIAAutomationId == "EditInfo":
