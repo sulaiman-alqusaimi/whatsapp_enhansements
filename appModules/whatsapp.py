@@ -53,8 +53,7 @@ class AppModule(appModuleHandler.AppModule):
 	def script_subtitles(self, gesture):
 		obj = self.find("TitleButton")
 		if obj:
-			message(", ".join([o.name for o in obj.children if len(o.name) < 50]))
-# the folowwing in an example how I want to cut out the last 2 character but I don't know how can I accomplish this.
+			message(", ".join([o.name.strip() for o in obj.children if len(o.name) < 50]))
 #			message(obj.firstChild.name[:-2] + ", " + obj.children[1].name)
 		else:
 			gesture.send()
