@@ -25,7 +25,7 @@ class SettingsPanel(SettingsPanel):
 	title = "whatsapp enhansements"
 	def makeSettings(self, settingsSizer):
 		sHelper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
-		self.recordSounds = sHelper.addItem(wx.CheckBox(self, -1, "مؤثرات التسجيل", name="record_sounds"))
+		self.recordSounds = sHelper.addItem(wx.CheckBox(self, -1, "Play the sounds when using recording gesture", name="record_sounds"))
 		self.recordSounds.Value = config.conf["whatsapp_enhansements"]["record_sounds"]
 
 	def postInit(self):
