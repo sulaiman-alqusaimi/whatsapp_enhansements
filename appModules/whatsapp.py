@@ -203,10 +203,23 @@ class AppModule(appModuleHandler.AppModule):
 		category="whatsapp")
 	def script_record(self, gesture):
 		obj = self.find("RightButton") or self.find("PttSendButton")
-		if obj and  (obj.UIAAutomationId == "RightButton" and obj.firstChild.name == "\ue720") or obj.UIAAutomationId == "PttSendButton":
+		if obj:
 			obj.doAction()
 			if config.conf["whatsapp_enhansements"]["record_sounds"]:
-				winsound.PlaySound(os.path.join(path, "record.wav"), 1) if obj.UIAAutomationId == "RightButton" else winsound.PlaySound(os.path.join(path, "stop.wav"), 1)
+				winsound.PlaySound(os.path.join(path, "wa_ptt_start_record.wav"), 1) if obj.UIAAutomationId == "RightButton" else winsound.PlaySound(os.path.join(path, "wa_ptt_sent.wav"), 1)
+		else:
+			gesture.send()
+
+	@script(
+		gesture="kb:alt+r",
+		description=_("pause recording"),
+		category="whatsapp")
+	def script_pause(self, gesture):
+		obj = self.find("PttPauseButton") or self.find("PttResumeButton")
+		if obj:
+			obj.doAction()
+			if config.conf["whatsapp_enhansements"]["record_sounds"]:
+				winsound.PlaySound(os.path.join(path, "wa_ptt_stop_record.wav"), 1) if obj.UIAAutomationId == "PttPauseButton" else winsound.PlaySound(os.path.join(path, "wa_ptt_start_record.wav"), 1)
 		else:
 			gesture.send()
 
@@ -215,18 +228,31 @@ class AppModule(appModuleHandler.AppModule):
 		description=_("delete voice notes"),
 		category="whatsapp")
 	def script_recordDelete(self, gesture):
-		obj = self.find("PttDeleteButton")
+		obj = self.find("PttDeleteButton") or self.find("PttResumeButton")
 		if obj:
 			obj.doAction()
-			winsound.PlaySound(os.path.join(path, "error.wav"), 1) if config.conf["whatsapp_enhansements"]["record_sounds"] else None
+			if config.conf["whatsapp_enhansements"]["record_sounds"]:
+				winsound.PlaySound(os.path.join(path, "wa_ptt_quick_cancel.wav"), 1)
 		else:
 			gesture.send()
 
 
 
 	def event_gainFocus(self, obj, nextHandler):
-		if obj.name in ("WhatsApp.GroupParticipantsItemVm", "WhatsApp.ChatListMessageSearchCellVm", "WhatsApp.ChatListGroupSearchCellVm", "WhatsApp.Pages.Recipients.UserRecipientItemVm"):
-			obj.name = ", ".join([m.name for m in obj.children])
+# I comment out the following line first. If me or anyone can confirm it already accessible by default, remove it.
+#		if obj.name in ("WhatsApp.GroupParticipantsItemVm", "WhatsApp.ChatListMessageSearchCellVm", "WhatsApp.ChatListGroupSearchCellVm", "WhatsApp.Pages.Recipients.UserRecipientItemVm"):
+#			obj.name = ", ".join([m.name for m in obj.children])
+		if obj.name == "WhatsApp.PeerStreamVm":
+			if obj.firstChild.children[1].name == "Ringing...":
+				obj.name = obj.firstChild.children[0].name + ", " + obj.firstChild.children[1].name
+			elif obj.firstChild.children[2].name == "Muted":
+				obj.name = obj.firstChild.children[0].name + ", " + obj.firstChild.children[2].name + ", " + obj.firstChild.children[3].name
+			else:
+				obj.name = obj.firstChild.children[0].name + ", Unmuted, " + obj.firstChild.children[2].name
+		elif obj.UIAAutomationId in ("CancelButton", "RejectButton"):	
+			obj.name = obj.firstChild.name
+		elif obj.UIAAutomationId == "AcceptButton":
+			obj.name = obj.children[1].name
 		elif obj.UIAAutomationId == "MuteDropdown":
 			obj.name = obj.children[0].name
 		elif obj.UIAAutomationId == "ThemeCombobox":
