@@ -53,7 +53,8 @@ class AppModule(appModuleHandler.AppModule):
 	def script_subtitles(self, gesture):
 		obj = self.find("TitleButton")
 		if obj:
-			message(", ".join([o.name for o in obj.children if len(o.name) < 50]))
+#			message(", ".join([o.name for o in obj.children if len(o.name) < 50]))
+			message(obj.firstChild.name[:-2] + ", " + obj.children[1].name)
 		else:
 			gesture.send()
 
@@ -157,7 +158,7 @@ class AppModule(appModuleHandler.AppModule):
 		obj = self.find("AudioCallButton")
 		audioname = self.find("TitleButton")
 		if obj:
-			message("Please wait, you will be connected with"+ " "+audioname.firstChild.name +" "+ "through an audio call.")
+			message("Please wait, you will be connected with " + audioname.firstChild.name[:-2] + " through an audio call.")
 			obj.doAction()
 		else:
 			gesture.send()
