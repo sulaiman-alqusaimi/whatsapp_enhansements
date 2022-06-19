@@ -156,10 +156,11 @@ class AppModule(appModuleHandler.AppModule):
 		category="whatsapp")
 	def script_audiocall(self, gesture):
 		obj = self.find("AudioCallButton")
-		audioname = self.find("TitleButton")
+		name = self.find("TitleButton")
 		if obj:
-			message("Please wait, you will be connected with " + audioname.firstChild.name[:-2] + " through an audio call.")
 			obj.doAction()
+			if obj.doAction:
+				message("Please wait, you will be connected with " + name.firstChild.name[:-2] + " through an audio call.")
 		else:
 			gesture.send()
 
@@ -167,14 +168,27 @@ class AppModule(appModuleHandler.AppModule):
 		gesture="kb:alt+shift+v", 
 		description=_("Press video call button"), 
 		category="whatsapp")
-	def script_vCall(self, gesture):
+	def script_videocall(self, gesture):
 		obj = self.find("VideoCallButton")
-		vName = self.find("TitleButton")
+		name = self.find("TitleButton")
 		if obj:
-			message("Please wait, you will be connected with"+ " "+vName.firstChild.name +" "+ "through a video call.")
+			obj.doAction()
+			if obj.doAction:
+				message("Please wait, you will be connected with " + name.firstChild.name[:-2] + " through a video call.")
+		else:
+			gesture.send()
+
+	@script(
+		gesture="kb:alt+b",
+		description=_("back button"),
+		category="whatsapp")
+	def script_backbutton(self, gesture):
+		obj = self.find("BackButton")
+		if obj:
 			obj.doAction()
 		else:
 			gesture.send()
+
 
 	@script(
 		gesture="kb:control+n",
