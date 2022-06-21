@@ -54,7 +54,6 @@ class AppModule(appModuleHandler.AppModule):
 		obj = self.find("TitleButton")
 		if obj:
 			message(", ".join([o.name.strip() for o in obj.children if len(o.name) < 50]))
-#			message(obj.firstChild.name[:-2] + ", " + obj.children[1].name)
 		else:
 			gesture.send()
 
@@ -160,7 +159,7 @@ class AppModule(appModuleHandler.AppModule):
 		if obj:
 			obj.doAction()
 			if obj.doAction:
-				message("Please wait, you will be connected with " + name.firstChild.name[:-2] + " through an audio call.")
+				message("Please wait, you will be connected with "+name.firstChild.name.strip()+" through an audio call.")
 		else:
 			gesture.send()
 
@@ -174,7 +173,7 @@ class AppModule(appModuleHandler.AppModule):
 		if obj:
 			obj.doAction()
 			if obj.doAction:
-				message("Please wait, you will be connected with " + name.firstChild.name[:-2] + " through a video call.")
+				message("Please wait, you will be connected with "+name.firstChild.name.strip()+" through a video call.")
 		else:
 			gesture.send()
 
@@ -254,9 +253,6 @@ class AppModule(appModuleHandler.AppModule):
 
 
 	def event_gainFocus(self, obj, nextHandler):
-# I comment out the following line first. If me or anyone can confirm it already accessible by default, remove it.
-#		if obj.name in ("WhatsApp.GroupParticipantsItemVm", "WhatsApp.ChatListMessageSearchCellVm", "WhatsApp.ChatListGroupSearchCellVm", "WhatsApp.Pages.Recipients.UserRecipientItemVm"):
-#			obj.name = ", ".join([m.name for m in obj.children])
 		if obj.name == "WhatsApp.PeerStreamVm":
 			if obj.firstChild.children[1].name == "Ringing...":
 				obj.name = obj.firstChild.children[0].name + ", " + obj.firstChild.children[1].name
