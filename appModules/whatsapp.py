@@ -93,6 +93,18 @@ class AppModule(appModuleHandler.AppModule):
 			gesture.send()
 
 	@script(
+		gesture="kb:control+e", 
+		description=_("Insert emoji"), 
+		category="whatsapp")
+	def script_emoji(self, gesture):
+		obj = self.find("EmojiButton")
+		if obj:
+			message(obj.name)
+			obj.doAction()
+		else:
+			gesture.send()
+
+	@script(
 		gesture="kb:alt+u", 
 		description=_("go to the unread messages section"), 
 		category="whatsapp")
@@ -264,6 +276,8 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = obj.firstChild.name
 		elif obj.UIAAutomationId == "AcceptButton":
 			obj.name = obj.children[1].name
+		elif obj.name == 'WhatsApp.ViewModels.EmojiPickerCategoryViewModel':
+			obj.name = obj.firstChild.name
 		elif obj.UIAAutomationId == "MuteDropdown":
 			obj.name = obj.children[0].name
 		elif obj.UIAAutomationId == "ThemeCombobox":
