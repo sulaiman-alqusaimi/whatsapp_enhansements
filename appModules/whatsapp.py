@@ -272,6 +272,8 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = obj.children[1].name
 		elif obj.UIAAutomationId == "BackButton":
 			obj.name = _("Back")
+		elif obj.UIAAutomationId == 'CloseButton':
+			obj.name = _('Cancel')
 		elif obj.name == "\ue8bb":
 			obj.name = _("Cancel reply")
 		elif obj.UIAAutomationId == "SendMessages":
