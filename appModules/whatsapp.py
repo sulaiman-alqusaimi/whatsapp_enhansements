@@ -265,7 +265,9 @@ class AppModule(appModuleHandler.AppModule):
 
 
 	def event_gainFocus(self, obj, nextHandler):
-		if obj.name == "WhatsApp.PeerStreamVm":
+		if obj.name in ("WhatsApp.WaCollections.KeyedObservableCollection`2[WhatsApp.GroupItem,WhatsApp.RecipientItem]", "WhatsApp.RecipientItem", "WhatsApp.ReceiptViewModel",):
+			obj.name = ", ".join([m.name for m in obj.children])
+		elif obj.name == "WhatsApp.PeerStreamVm":
 			if obj.firstChild.children[1].name == "Ringing...":
 				obj.name = obj.firstChild.children[0].name + ", " + obj.firstChild.children[1].name
 			elif obj.firstChild.children[2].name == "Muted":
