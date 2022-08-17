@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-06-02 19:26+0400\n"
-"PO-Revision-Date: 2022-06-11 15:08+0400\n"
+"POT-Creation-Date: 2022-08-17 20:01+0400\n"
+"PO-Revision-Date: 2022-08-17 20:07+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -14,69 +14,114 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:51
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:31
+msgid "ignore reading phone number for unknown contacts"
+msgstr "تجاهل نطق أرقام الهواتف غير المسجلة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:33
+msgid "focus position for the unread shortcut"
+msgstr "موضع تركيز المؤشر لوظيفة الانتقال إلى الرسائل غير المقروءة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:34
+msgid "The first unread message"
+msgstr "التركيز على أول رسالة غير مقروءة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:34
+msgid "messages count"
+msgstr "التركيز على عداد الرسائل غير المقروءة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:58
 msgid "read the chat subtitle"
 msgstr "قراءة عنوان الدردشة"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:62
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:69
 msgid "open chat info"
 msgstr "فتح معلومات الدردشة"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:73
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:80
 msgid "Attach item"
 msgstr "إرفاق عنصر"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:84
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:91
 msgid "go to the unread messages section"
 msgstr "الانتقال إلى أول رسالة غير مقروءة في الدردشة"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:106
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:113
 msgid "go to the messages list"
 msgstr "الانتقال إلى قائمة الرسائل في الدردشة"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:119
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:126
 msgid "go to the chats list"
 msgstr "الانتقال إلى قائمة الدردشات"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:136
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:152
 msgid "new chat"
 msgstr "دردشة جديدة"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:147
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:163
 msgid "go to the typing message text field"
 msgstr "الانتقال إلى منطقة الكتابة في الدردشة المفتوحة"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:158
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:186
 msgid "record voice notes"
 msgstr "تسجيل رسالة صوتية"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:172
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:198
 msgid "delete voice notes"
 msgstr "إلغاء تسجيل الرسالة الصوتية"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:191
-msgid "Back"
-msgstr "رجوع"
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:209
+msgid "pause/resume voice note recording"
+msgstr "إيقاف/استئناف تسجيل الرسالة الصوتية"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:193
-msgid "Cancel recording"
-msgstr "إلغاء التسجيل"
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:220
+msgid "Activate the more options menu"
+msgstr "تنشيط قائمة الخيارات الإضافية"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:195
-msgid "Archived chats"
-msgstr "الدردشات المؤرشفة"
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:231
+msgid "Press audio call button"
+msgstr "إجراء مكالمة صوتية"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:199
-msgid "Record voice note"
-msgstr "تسجيل رسالة صوتية"
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:236
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:248
+msgid "Calling. Please wait"
+msgstr "جاري الاتصال... يرجى الانتظار"
 
-#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:197
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:243
+msgid "Press video call button"
+msgstr "إجراء مكالمة فيديو"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:257
+msgid "toggle reading number for unknown contacts behaviour"
+msgstr "التبديل ما بين تشغيل/تعطيل تجاهل الأرقام المجهولة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:262
+msgid "ignore reading numbers for unknown contacts is on"
+msgstr "تشغيل وضع تجاهل نطق الأرقام غير المعروفة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:264
+msgid "ignore reading numbers for unknown contacts is off"
+msgstr "إيقاف وضع تجاهل نطق الأرقام غير المعروفة"
+
+#: C:\Users\suleiman\AppData\Roaming\nvda\addons\whatsapp_enhansements\appModules\whatsapp.py:276
 msgid "Cancel reply"
 msgstr "إلغاء الرد"
+
+#~ msgid "Back"
+#~ msgstr "رجوع"
+
+#~ msgid "Cancel recording"
+#~ msgstr "إلغاء التسجيل"
+
+#~ msgid "Archived chats"
+#~ msgstr "الدردشات المؤرشفة"
+
+#~ msgid "Record voice note"
+#~ msgstr "تسجيل رسالة صوتية"
 
 #~ msgid "attach item"
 #~ msgstr "إرفاق عنصر"
