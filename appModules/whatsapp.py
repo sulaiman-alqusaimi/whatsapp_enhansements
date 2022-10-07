@@ -11,6 +11,7 @@ import wx
 import config
 
 
+
 addonHandler.initTranslation()
 
 
@@ -49,7 +50,7 @@ class AppModule(appModuleHandler.AppModule):
 		self.message = None
 	def find(self, automationId):
 		fg = api.getForegroundObject().children[1]
-		for obj in fg.children:
+		for obj in fg.children[0].children:
 			if obj.UIAAutomationId == automationId:
 				return obj
 
